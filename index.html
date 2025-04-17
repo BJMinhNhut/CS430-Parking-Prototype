@@ -30,9 +30,34 @@
     </div>
 
     <!-- Screen 2: Cat home screen -->
-    <div id="cat-home" class="hidden">
-        <h1 class="text-2xl font-bold mb-4">Chạm thẻ xe vào máy quét bên cạnh để cho mèo ăn</h1>
+    <div id="cat-home" class="hidden relative">
+        <h1 class="text-2xl font-bold mb-4">Chạm thẻ xe vào máy quét bên cạnh để cho Mèo ăn</h1>
         <img src="assets/cat-normal.png" alt="Cat Normal" class="w-48 h-auto mx-auto" />
+
+        <!-- Left zone -->
+        <div 
+            class="absolute top-0 left-0 w-1/2 h-full cursor-pointer" 
+            onclick="navigateTo('cat-fed-failure')">
+        </div>
+
+        <!-- Right zone -->
+        <div 
+            class="absolute top-0 right-0 w-1/2 h-full cursor-pointer" 
+            onclick="navigateTo('cat-feeding')">
+        </div>
+    </div>
+
+    <!-- Screen 3: Cat feeding -->
+    <div id="cat-feeding" class="hidden">
+        <h1 class="text-2xl font-bold mb-4">Bạn đã cho Mèo ăn 1🐟</h1>
+        <img src="assets/cat-eat.gif" alt="Cat Happy" class="w-48 h-auto mx-auto" />
+    </div>
+
+    <!-- Screen 4: Cat fed failure -->
+    <div id="cat-fed-failure" class="hidden">
+        <img src="assets/warning.png" alt="Warning" class="w-32 h-auto mx-auto mb-4" />
+        <h1 class="text-2xl font-bold mb-4">Có gì đó sai sai… Hãy thử lại!</h1>
+        <img src="assets/cat-normal.png" alt="Cat Fed Failure" class="w-48 h-auto mx-auto" />
     </div>
 
     <script src="./script.js"></script>
