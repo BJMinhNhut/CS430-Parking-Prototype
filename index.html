@@ -120,7 +120,11 @@
     <div id="search-input" class="hidden w-full max-w-md md:max-w-lg">
         <img class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-auto mx-auto mb-4 max-w-full" src="assets/logosc.png" alt="SC" />
         <h1 class="heading">Nhập 5 số cuối biển số xe vào ô dưới</h1>
-        <input type="text" id="location-input" 
+        <input 
+            type="tel"
+            id="location-input"
+            pattern="[0-9]*"
+            inputmode="numeric"
             placeholder="VD: Biển 51K - 24565, nhập 24565" 
             class="border border-gray-300 rounded px-6 py-4 mb-4 w-full text-2xl" />
         <div class="flex justify-center">
@@ -134,7 +138,7 @@
     <div id="search-success" class="hidden w-full max-w-md md:max-w-lg">
         <img class="absolute top-0 left-1/2 transform -translate-x-1/2 top-0 w-1/2 h-auto mx-auto mb-4 max-w-full" src="assets/logosc.png" alt="SC" />
         <h1 class="heading">KẾT QUẢ TRA CỨU</h1>
-        <div class="border-gray-300 border-4 rounded px-6 py-4 mb-4 w-full text-2xl text-center">
+        <div id="result" class="border-gray-300 border-4 rounded px-6 py-4 mb-4 w-full text-2xl text-center">
             <span class="dynamic-location">:w-1</span> |
             <span class="dynamic-plate">:w-1</span>
         </div>
