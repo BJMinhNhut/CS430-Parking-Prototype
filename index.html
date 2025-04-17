@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Parking Saver & Finder</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    </style>
+</head>
+<body class="bg-white-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Loading overlay -->
+    <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+    </div>
+
+    <!-- Screen 1: Trial selection -->
+    <div id="choose-trial">
+      <h1 class="text-xl font-bold mb-4">Chọn thử nghiệm</h1>
+      <div class="flex flex-col gap-3">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 1)">Thử nghiệm 1</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 2)">Thử nghiệm 2</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 3)">Thử nghiệm 3</button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Cat home screen -->
+    <div id="cat-home" class="hidden">
+        <h1 class="text-2xl font-bold mb-4">Chạm thẻ xe vào máy quét bên cạnh để cho mèo ăn</h1>
+        <img src="assets/cat-normal.png" alt="Cat Normal" class="w-48 h-auto mx-auto" />
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
