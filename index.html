@@ -125,10 +125,14 @@
             id="location-input"
             pattern="[0-9]*"
             inputmode="numeric"
+            autocomplete="off"
+            maxlength="5"
             placeholder="VD: Biển 51K - 24565, nhập 24565" 
             class="border border-gray-300 rounded px-6 py-4 mb-4 w-full text-2xl" />
         <div class="flex justify-center">
-            <button class="sc-color text-white px-4 py-2 rounded text-xl" onclick="search()">
+            <button
+                type="button" 
+                class="sc-color text-white px-4 py-2 rounded text-xl" onclick="search()">
                 <i class="fas fa-search"></i> Tìm xe
             </button>
         </div>
