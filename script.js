@@ -58,7 +58,11 @@ function navigateTo(screenId, trial = null) {
     if (screenId === 'cat-feeding') {
         setTimeout(() => {
             navigateTo('cat-fed-success');
-        }, 3000); // 3000ms = 3 seconds
+        }, 2750); // 3000ms = 3 seconds
+    } else if (screenId === 'cat-fed-success') {
+        setTimeout(() => {
+            navigateTo('cat-reminder');
+        }, 2750);
     } else if (screenId === 'cat-reminder') {
         setTimeout(() => {
             navigateTo('cat-home');
