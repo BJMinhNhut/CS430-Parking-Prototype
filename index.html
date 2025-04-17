@@ -132,7 +132,7 @@
         <div class="flex justify-center">
             <button
                 type="button" 
-                class="sc-color text-white px-4 py-2 rounded text-xl" onclick="search()">
+                class="sc-color text-white px-6 py-4 rounded text-xl" onclick="search()">
                 <i class="fas fa-search"></i> Tìm xe
             </button>
         </div>
@@ -148,7 +148,7 @@
             <i class="fas fa-car text-sc-color text-3xl"></i>
         </div>
         <div class="flex justify-center">
-            <button class="sc-color text-white px-4 py-2 rounded mt-2 text-xl" onclick="navigateTo('search-home')">Hoàn tất</button>
+            <button class="sc-color text-white px-6 py-4 rounded mt-2 text-xl" onclick="navigateTo('search-home')">Hoàn tất</button>
         </div>
     </div>
 
@@ -157,16 +157,17 @@
         <img class="absolute top-0 left-1/2 transform -translate-x-1/2 top-0 w-1/2 h-auto mx-auto mb-4 max-w-full" src="assets/logosc.png" alt="SC" />
         <div class="flex items-center justify-center gap-2 mb-4">
             <!-- Red circled X icon -->
-            <i class="fas fa-times-circle text-red-500 text-4xl"></i>
-            <h1 class="heading">KHÔNG TÌM THẤY XE</h1>
+            <h1 class="heading">
+                <i class="fas fa-times-circle text-red-500 text-4xl"></i>
+                KHÔNG TÌM THẤY XE</h1>
         </div>
-        <p class="text-center mb-4 text-xl">
+        <p class="text-center mb-8 text-xl">
             Hãy liên hệ với nhân viên hầm xe để xác nhận thông tin xe của bạn<br>
             Nếu nhập nhầm hãy bấm nút Quay lại
         </p>
         <div class="flex flex-col gap-3 items-center">
-            <button class="text-xl bg-gray-500 hover:bg-gray-700 text-white px-4 py-4 rounded w-3/4" onclick="navigateTo('search-input')">Quay lại</button>
-            <button class="sc-color text-white px-4 py-4 rounded w-3/4 text-xl" onclick="navigateTo('search-home')">Hoàn tất</button>
+            <button class="text-xl bg-gray-500 hover:bg-gray-700 text-white px-6 py-4 rounded w-3/4" onclick="navigateTo('search-input')">Quay lại</button>
+            <button class="sc-color text-white px-6 py-4 rounded w-3/4 text-xl" onclick="navigateTo('search-home')">Hoàn tất</button>
         </div>
     </div>
             
