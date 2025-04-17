@@ -43,6 +43,15 @@ function navigateTo(screenId, trial = null) {
         if (locationText) {
             locationText.textContent = `${TRIAL_DATA[selectedTrial].position}`;
         }
+    } else if (screenId === 'search-success') {
+        const locationText = document.querySelector('#search-success .dynamic-location');
+        if (locationText) {
+            locationText.textContent = `${TRIAL_DATA[selectedTrial].position}`;
+        }
+        const plateText = document.querySelector('#search-success .dynamic-plate');
+        if (plateText) {
+            plateText.textContent = `${TRIAL_DATA[selectedTrial].licensePlate}`;
+        }
     }
 
     // Automatically navigate from 'cat-feeding' to 'cat-fed-success' after 3 seconds
@@ -54,6 +63,25 @@ function navigateTo(screenId, trial = null) {
         setTimeout(() => {
             navigateTo('cat-home');
         }, 2000);
+    }
+}
+
+function search() {
+    const input = document.getElementById("location-input").value.trim();
+    const expectedPlate = TRIAL_DATA[selectedTrial].licensePlate;
+
+    if (!expectedPlate) {
+        alert("Không xác định được thử nghiệm."); // Safety check
+        return;
+    }
+
+    const last5 = expectedPlate.replace(/\D/g, "").slice(-5); // Get last 5 digits
+    const cleanedInput = input.replace(/\D/g, ""); // Remove non-digits
+
+    if (cleanedInput === last5) {
+        navigateTo("search-success");
+    } else {
+        navigateTo("search-failure");
     }
 }
 
