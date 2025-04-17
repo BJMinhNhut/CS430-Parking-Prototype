@@ -52,6 +52,12 @@ function navigateTo(screenId, trial = null) {
         if (plateText) {
             plateText.textContent = `${TRIAL_DATA[selectedTrial].licensePlate}`;
         }
+        const last5 = TRIAL_DATA[selectedTrial].licensePlate.replace(/\D/g, "").slice(-5); // Get last 5 digits
+        const secondPlate = document.querySelector('#search-success .dynamic-plate-second');
+        if (secondPlate) {
+            // 11111 set 111.11
+            secondPlate.textContent = `62A-${last5.slice(0, 3)}.${last5.slice(3)}`;
+        }
     }
 
     // Automatically navigate from 'cat-feeding' to 'cat-fed-success' after 3 seconds
