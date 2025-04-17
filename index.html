@@ -30,14 +30,17 @@
     <div id="choose-trial" class="w-full max-w-md md:max-w-lg">
         <h1 class="heading">Chọn thử nghiệm</h1>
         <div class="flex flex-col gap-3">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 1)">Thử nghiệm 1</button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 2)">Thử nghiệm 2</button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 3)">Thử nghiệm 3</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 1)">1. Lưu xe</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 mb-5 rounded" onclick="navigateTo('search-home', 1)">1. Tìm xe</button>
+            <button class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 2)">2. Lưu xe</button>
+            <button class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 mb-5 rounded" onclick="navigateTo('search-home', 2)">2. Tìm xe</button>
+            <button class="bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 3)">3. Lưu xe</button>
+            <button class="bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded" onclick="navigateTo('search-home', 3)">3. Tìm xe</button>
         </div>
     </div>
 
     <!-- Screen 2: Cat home screen -->
-    <div id="cat-home" class="hidden relative w-full max-w-md md:max-w-lg">
+    <div id="cat-home" class="hidden w-full max-w-md md:max-w-lg">
         <h1 class="heading">Chạm thẻ xe vào máy quét bên cạnh để cho Mèo ăn</h1>
         <img src="assets/cat-normal.png" alt="Cat Normal" class="w-80 h-auto mx-auto max-w-full" />
 
@@ -64,7 +67,37 @@
     <div id="cat-fed-failure" class="hidden w-full max-w-md md:max-w-lg">
         <img src="assets/warning.png" alt="Warning" class="w-16 h-auto mx-auto mb-4 max-w-full" />
         <h1 class="heading">Có gì đó sai sai…<br>Hãy thử lại!</h1>
-        <img src="assets/cat-normal.png" alt="Cat Fed Failure" class="w-80 h-auto mx-auto max-w-full" />
+        <img src="assets/cat-dots.gif" alt="Cat Fed Failure" class="w-80 h-auto mx-auto max-w-full" />
+        
+        <!-- Left zone -->
+        <div 
+            class="absolute top-0 left-0 w-1/2 h-full cursor-pointer" 
+            onclick="navigateTo('cat-fed-failure')">
+        </div>
+
+        <!-- Right zone -->
+        <div 
+            class="absolute top-0 right-0 w-1/2 h-full cursor-pointer" 
+            onclick="navigateTo('cat-feeding')">
+        </div>
+    </div>
+
+    <!-- Screen 5: Cat fed success -->
+    <div id="cat-fed-success" class="hidden w-full max-w-md md:max-w-lg">
+        <div class="absolute inset-0 cursor-pointer" onclick="navigateTo('cat-reminder')"></div>
+        <h1 class="heading">Mèo sẽ giúp bạn nhớ vị trí xe:<br>
+        <span class="dynamic-location">:w-1</span>
+        </h1>
+        <img src="assets/cat-ate.png" alt="Cat Ate" class="w-80 h-auto mx-auto max-w-full" />
+        <i class="block text-center text-xl text-gray-500 mt-4">
+            Bấm vào để tiếp tục
+        </i>
+    </div>
+
+    <!-- Screen 6: Cat reminder -->
+    <div id="cat-reminder" class="hidden w-full max-w-md md:max-w-lg">
+        <h1 class="heading">Mèo luôn ở gần thang máy để giúp bạn tìm vị trí xe</h1>
+        <img src="assets/cat-normal.png" alt="Cat Remember" class="w-80 h-auto mx-auto max-w-full" />
     </div>
 
     <script src="./script.js"></script>
