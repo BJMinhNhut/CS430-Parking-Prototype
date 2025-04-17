@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Added for mobile optimization -->
     <title>Parking Saver & Finder</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,28 +12,34 @@
     body {
         font-family: 'Inter', sans-serif;
     }
+    .heading {
+        font-size: 2rem; 
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
     </style>
 </head>
-<body class="bg-white-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-white-100 min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
     <!-- Loading overlay -->
     <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
     </div>
 
     <!-- Screen 1: Trial selection -->
-    <div id="choose-trial">
-      <h1 class="text-xl font-bold mb-4">Chọn thử nghiệm</h1>
-      <div class="flex flex-col gap-3">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 1)">Thử nghiệm 1</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 2)">Thử nghiệm 2</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded" onclick="navigateTo('cat-home', 3)">Thử nghiệm 3</button>
-      </div>
+    <div id="choose-trial" class="w-full max-w-md md:max-w-lg">
+        <h1 class="heading">Chọn thử nghiệm</h1>
+        <div class="flex flex-col gap-3">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 1)">Thử nghiệm 1</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 2)">Thử nghiệm 2</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded" onclick="navigateTo('cat-home', 3)">Thử nghiệm 3</button>
+        </div>
     </div>
 
     <!-- Screen 2: Cat home screen -->
-    <div id="cat-home" class="hidden relative">
-        <h1 class="text-2xl font-bold mb-4">Chạm thẻ xe vào máy quét bên cạnh để cho Mèo ăn</h1>
-        <img src="assets/cat-normal.png" alt="Cat Normal" class="w-48 h-auto mx-auto" />
+    <div id="cat-home" class="hidden relative w-full max-w-md md:max-w-lg">
+        <h1 class="heading">Chạm thẻ xe vào máy quét bên cạnh để cho Mèo ăn</h1>
+        <img src="assets/cat-normal.png" alt="Cat Normal" class="w-80 h-auto mx-auto max-w-full" />
 
         <!-- Left zone -->
         <div 
@@ -48,16 +55,16 @@
     </div>
 
     <!-- Screen 3: Cat feeding -->
-    <div id="cat-feeding" class="hidden">
-        <h1 class="text-2xl font-bold mb-4">Bạn đã cho Mèo ăn 1🐟</h1>
-        <img src="assets/cat-eat.gif" alt="Cat Happy" class="w-48 h-auto mx-auto" />
+    <div id="cat-feeding" class="hidden w-full max-w-md md:max-w-lg">
+        <h1 class="heading">Bạn đã cho Mèo ăn 1🐟</h1>
+        <img src="assets/cat-eat.gif" alt="Cat Happy" class="w-80 h-auto mx-auto max-w-full" />
     </div>
 
     <!-- Screen 4: Cat fed failure -->
-    <div id="cat-fed-failure" class="hidden">
-        <img src="assets/warning.png" alt="Warning" class="w-32 h-auto mx-auto mb-4" />
-        <h1 class="text-2xl font-bold mb-4">Có gì đó sai sai… Hãy thử lại!</h1>
-        <img src="assets/cat-normal.png" alt="Cat Fed Failure" class="w-48 h-auto mx-auto" />
+    <div id="cat-fed-failure" class="hidden w-full max-w-md md:max-w-lg">
+        <img src="assets/warning.png" alt="Warning" class="w-16 h-auto mx-auto mb-4 max-w-full" />
+        <h1 class="heading">Có gì đó sai sai…<br>Hãy thử lại!</h1>
+        <img src="assets/cat-normal.png" alt="Cat Fed Failure" class="w-80 h-auto mx-auto max-w-full" />
     </div>
 
     <script src="./script.js"></script>
